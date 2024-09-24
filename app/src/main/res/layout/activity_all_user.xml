@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".allUserActivity"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Toolbar
+            android:id="@+id/toolbar"
+            android:background="#0D0D0D"
+
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ChatFlow"
+                android:textColor="@color/white"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                ></TextView>
+
+<ImageView
+    android:id="@+id/userProfile"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_marginLeft="190dp"
+    android:src="@drawable/user_profile"
+    ></ImageView>
+
+
+           <ImageView
+               android:id="@+id/logOutIcon"
+               android:layout_marginRight="@dimen/_10sdp"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:layout_gravity="end"
+               android:src="@drawable/logout_icon"></ImageView>
+        </Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#0E0E0E"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        tools:listitem="@layout/user_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

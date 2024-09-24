@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#060606"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".message_Activity"
+    >
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/toolbar"
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:background="#0D0D0D"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="#0D0D0D"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent">
+
+         <de.hdodenhof.circleimageview.CircleImageView
+             android:id="@+id/profileIcon"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:layout_marginLeft="20dp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintStart_toEndOf="@+id/backButton"
+             app:layout_constraintTop_toTopOf="parent"></de.hdodenhof.circleimageview.CircleImageView>
+
+
+         <ImageView
+             android:id="@+id/backButton"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+
+
+             android:src="@drawable/my_back_button"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+         <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+             android:id="@+id/CallButton"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:layout_marginRight="@dimen/_20sdp"
+             android:visibility="visible"
+
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+
+
+         <TextView
+             android:id="@+id/toolbarUserName"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:text="Jauhar Ansari"
+             android:textColor="#ffffff"
+             android:textSize="20sp"
+             android:textStyle="bold"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toStartOf="@+id/CallButton"
+             app:layout_constraintStart_toEndOf="@+id/profileIcon"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintVertical_bias="0.521"></TextView>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+
+       app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/messageRecyclerView"
+          app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:background="#060606"
+          android:layout_height="match_parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+
+
+      </androidx.recyclerview.widget.RecyclerView>
+
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/constraintLayout2"
+       android:layout_width="match_parent"
+
+       android:background="@drawable/send_message_bg"
+       android:layout_marginBottom="@dimen/_10sdp"
+       android:layout_height="@dimen/_60sdp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent">
+
+      <com.google.android.material.imageview.ShapeableImageView
+          android:id="@+id/gallaryButton"
+          android:layout_width="@dimen/_40sdp"
+          android:layout_height="@dimen/_40sdp"
+          android:layout_marginTop="@dimen/_10sdp"
+          android:src="@drawable/gallary"
+          app:layout_constraintEnd_toStartOf="@+id/sendButton"
+          app:layout_constraintTop_toTopOf="parent"></com.google.android.material.imageview.ShapeableImageView>
+
+      <EditText
+          android:id="@+id/messageBox"
+          android:layout_width="@dimen/_170sdp"
+          android:layout_height="@dimen/_50sdp"
+          android:layout_marginLeft="@dimen/_10sdp"
+
+          android:background="@drawable/send_message_bg"
+          android:hint="Type here...."
+          android:textColor="@color/white"
+          android:paddingLeft="@dimen/_10sdp"
+          android:textColorHint="#40413f"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"></EditText>
+
+      <de.hdodenhof.circleimageview.CircleImageView
+          android:id="@+id/sendButton"
+          android:layout_width="@dimen/_40sdp"
+          android:layout_marginRight="@dimen/_5sdp"
+          android:layout_height="@dimen/_40sdp"
+          android:src="@drawable/my_send_button"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"></de.hdodenhof.circleimageview.CircleImageView>
+
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
